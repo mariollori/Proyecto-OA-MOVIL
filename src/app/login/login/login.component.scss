@@ -1,0 +1,48 @@
+#container {
+    text-align: center;
+  
+    
+    padding: 30px;
+    left: 0;
+    right: 0;
+    top: 50%;
+    }
+  
+  
+    .logosuper{
+      position: absolute;
+      left: 13vw;
+      border-radius: 20px;
+      top:45vh;
+    }
+  
+  ion-content{
+    padding: 50px;
+    ion-item{
+      border-radius: 40px;
+      box-shadow: 1px 8px 8px 5px rgba(0, 0, 0, 0.08);
+    }
+    .user{
+      margin-bottom: 20px;
+    }
+    .password{
+      margin-bottom:30px;
+    }
+    .btn{
+  
+      margin-bottom: 30px;
+    }
+  
+    .register{
+      display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 15px;
+        margin-right: 10px;   
+     }
+  
+  }
+  
+  

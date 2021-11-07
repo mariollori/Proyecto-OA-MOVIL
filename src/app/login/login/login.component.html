@@ -1,0 +1,38 @@
+
+
+<ion-content [fullscreen]="true">
+ <div >
+  <img src="assets/icon/logologin.png">
+
+  <img class="logosuper" src="assets/icon/logooido.png">
+</div>
+  <div id="container">
+   
+ 
+     <ion-item class="user">
+ 
+    <ion-input type="text" [(ngModel)]="usuario.username"  placeholder="Usuario"></ion-input>
+     
+    <ion-icon position="final" color="primary" name="person-circle-outline"></ion-icon>
+  </ion-item>
+    <ion-item   class="password">
+   
+     
+    <ion-input  #passwordEyeRegister  [type]="passwordTypeInput" placeholder="Contraseña" [(ngModel)]="usuario.password"></ion-input>
+   <ion-icon [name]="iconpassword" color="primary" (click)="togglePasswordMode()"></ion-icon>
+
+  </ion-item>
+  
+ 
+  
+    <ion-button expand="full" class="btn"  (click)="login()" shape="round">
+  Ingresar
+ <ion-icon name="log-in-outline" slot="start"></ion-icon>
+</ion-button>
+ <div class="register">
+    <u  (click)="registrarpac()">Registrar solicitud</u>
+    <ion-icon name="document-text-outline"></ion-icon>
+     </div>
+  </div>
+  
+</ion-content>
