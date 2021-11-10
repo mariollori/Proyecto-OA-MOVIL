@@ -7,10 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { NavPageRoutingModule } from './nav-routing.module';
 
 import { NavPage } from './nav.page';
-import { ListapacComponent } from './listapac/listapac/listapac.component';
-import { MenupopoverComponent } from './menu/menupopover/menupopover.component';
-import { DetallePacComponent } from './detailpaciente/detalle-pac/detalle-pac.component';
-import { RegistroAtencionComponent } from './registro_atencion/registro-atencion/registro-atencion.component';
 
 
 @NgModule({
@@ -23,6 +19,6 @@ import { RegistroAtencionComponent } from './registro_atencion/registro-atencion
     ReactiveFormsModule,
     NavPageRoutingModule
   ],
-  declarations: [NavPage, ListapacComponent,MenupopoverComponent,DetallePacComponent,RegistroAtencionComponent]
+  declarations: [NavPage]
 })
 export class NavPageModule {}

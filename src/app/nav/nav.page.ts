@@ -40,7 +40,7 @@ export class NavPage implements OnInit {
     this.menu.close();
   }
   home(){
-    this.navCtrl.navigateForward('nav/listapac');
+    this.navCtrl.navigateForward('nav/tabs/listapac');
     this.menu.close();
   }
 

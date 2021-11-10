@@ -54,6 +54,9 @@ export class PacienteService {
    
     return this.http.post<String>(this.urlEndpoint3 + '/registrardata3' ,{atencion,id,derivacion});
   }
- 
+  getatencion_pend(idpersonal):Observable<any>{
+   
+    return this.http.get<any>(this.urlEndpoint3 + '/listatencion_pend/' + idpersonal);
+  }
  
 }
