@@ -4,4 +4,33 @@
 </ion-toolbar>
 
 <ion-content >
-</ion-content >
+    <h3 *ngIf="datalist.length==0">No se encontraron pacientes asignados</h3>
+
+    <ion-list *ngIf="datalist">
+
+    <ion-card *ngFor="let pac of datalist">
+    <div class="menu">
+    <ion-icon name="ellipsis-vertical-sharp" (click)="opciones( $event ,pac)"></ion-icon>
+    </div>
+    <img  *ngIf="pac.genero=='M'" class="header-img" src="assets/icon/pacienteM.jpg" />
+    <img *ngIf="pac.genero=='H'" class="header-img" src="assets/icon/pacienteH.png" />
+  <ion-item class="ion-activated">
+    <ion-icon name="accessibility" slot="start"></ion-icon>
+    <ion-label>{{(pac.nombre + ' ' + pac.apellido)  }}</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="mail" slot="start"></ion-icon>
+    <ion-label>{{pac.correo}}</ion-label>
+  </ion-item>
+
+  <ion-item class="ion-activated">
+    <ion-icon name="call" slot="start"></ion-icon>
+    <ion-label>{{pac.telefono}}</ion-label>
+    <ion-icon name="logo-whatsapp" class="whasaaa" slot="end"></ion-icon>
+  </ion-item>
+
+  
+</ion-card>
+
+    </ion-list>

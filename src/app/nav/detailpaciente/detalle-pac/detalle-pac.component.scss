@@ -1,0 +1,34 @@
+.title{
+   
+    font-style: oblique;
+    font-size: 18px;
+}
+ion-list-header {
+    height: 50px;
+    background-color: cornflowerblue;
+    color: white;
+}
+ion-list{
+    padding: 0;
+}
+ion-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ion-list-header{
+    margin-bottom: 10px;
+}
+
+ion-buttons{
+    color: white;
+    width: 25%;
+    border-radius: 20px;
+    margin-left: 40%;
+    background-color: cadetblue;
+    margin-bottom: 10px;
+}
+ion-icon{
+    color: cadetblue;
+}

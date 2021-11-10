@@ -1,0 +1,50 @@
+ion-card{
+    margin-top: 20px;
+    box-shadow: 1px 5px 5px 4px rgba(0, 0, 0, 0.1) ;
+    border-radius: 20px;
+}
+ion-content{
+    h3{
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+}
+ion-list{
+    padding: 20px;
+}
+
+.whasaaa{
+    color:white;
+    background-color: teal;
+    border-radius: 20%;
+    
+
+}
+.icon_list{
+    color: #930534;
+}
+
+.header-img{
+    height: 160px;
+    width: 100%;
+}
+.detailmodal{
+    width: 200px;
+    height: 200px;
+}
+.menu{
+    position: absolute;
+    background-color: white;
+    box-shadow: 1px 8px 8px 0 px rgba(0, 0,0,0.4);
+    color: black;
+    font-size: 20px ;
+    border-radius: 50%;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 10px;
+}
+.contact-popover .popover-content{ width: 200px; }

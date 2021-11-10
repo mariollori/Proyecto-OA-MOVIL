@@ -1,0 +1,44 @@
+ <ion-list>
+          <ion-list-header >
+            <ion-label class="title">
+              Detalles de consulta de: {{nombre }}
+            </ion-label>
+          </ion-list-header>
+       <form>
+          <ion-item>
+            <ion-label position="floating">Edad</ion-label>
+       <ion-input [(ngModel)]="pac.edad" name="edad" disabled ></ion-input>
+       <ion-icon name="hourglass" slot="end"></ion-icon>
+      
+                
+          </ion-item>
+       
+         
+            
+
+          <ion-item>
+           <ion-label position="floating">Motivo</ion-label>
+
+             <ion-input type="text" [(ngModel)]="pac.motivo"  disabled name="Correo"></ion-input>
+     
+               <ion-icon name="reader"  slot="end" ></ion-icon>
+          </ion-item>
+
+
+           <ion-item>
+           <ion-label position="floating">Descripcion</ion-label>
+             <ion-textarea type="text" [(ngModel)]="pac.descripcion" disabled  name="Apellidos"></ion-textarea>
+     
+          <ion-icon name="book" slot="end" ></ion-icon>
+          </ion-item>
+             </form>
+
+
+    
+             <ion-buttons (click)="cerrar()">
+            <ion-button>Cerrar</ion-button>
+             </ion-buttons>
+
+        
+ 
+        </ion-list>

@@ -15,6 +15,7 @@ export class PacienteService {
   
   urlEndpoint = "http://localhost:5050/EX3/persona";
   urlEndpoint2 = "http://localhost:5050/EX3/usuario";
+  urlEndpoint3 = "http://localhost:5050/EX3/paciente";
   crearpaciente(persona:Persona,paciente:Paciente):Observable<String>{
     console.log(persona)
     console.log(paciente)
@@ -25,4 +26,34 @@ export class PacienteService {
    
     return this.http.get<Persona>(this.urlEndpoint2 + '/' + idusuario);
   }
+  
+  getlistpac(idpersonal):Observable<any>{
+   
+    return this.http.get<any>(this.urlEndpoint3 + '/listarpacasig/' + idpersonal);
+  }
+
+  getnroregistros(idasignacion):Observable<any>{
+   
+    return this.http.get<any>(this.urlEndpoint3 + '/numeroregistros/' + idasignacion);
+  }
+
+  getidsesion(idasignacion):Observable<any>{
+   
+    return this.http.get<any>(this.urlEndpoint3 + '/getidatencion/' + idasignacion);
+  }
+  registrardata1(paciente, atencion, id,fecha):Observable<String>{
+   
+    return this.http.post<String>(this.urlEndpoint3 + '/registrardata1' ,{paciente,atencion,id,fecha});
+  }
+
+  registrardata2(atencion, id,fecha):Observable<String>{
+   
+    return this.http.post<String>(this.urlEndpoint3 + '/registrardata2' ,{atencion,id,fecha});
+  }
+  registrardata3(atencion, id,derivacion):Observable<String>{
+   
+    return this.http.post<String>(this.urlEndpoint3 + '/registrardata3' ,{atencion,id,derivacion});
+  }
+ 
+ 
 }

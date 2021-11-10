@@ -16,9 +16,10 @@ export class PerfilComponent implements OnInit {
   constructor(private service:PacienteService,private token:TokenService) { }
 
   ngOnInit() {
+    console.log(this.token.usuario.idpersonal)
     this.service.getuser(this.token.usuario.idpersonal).subscribe(
       data=>{
-        console.log(data)
+    console.log(data)
        this.correo= data[0].correo;
        this.tipo= data[0].tipo.toUpperCase();
          this.nombrecompleto= data[0].nombre + ' ' +  data[0].apellido;

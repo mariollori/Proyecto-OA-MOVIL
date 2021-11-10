@@ -2,7 +2,7 @@
   [scrollEvents]="true">
      <ion-toolbar color="primary">
        
-   <ion-title>Registrar Solicitud</ion-title>
+             <ion-title>Registrar Solicitud</ion-title>
         <ion-buttons (click)="cerrar()" slot="end">
           <ion-button>
          
@@ -47,16 +47,6 @@
           </div>
     
 
-          <ion-item>
-             <ion-label position="stacked">
-              Edad 
-            </ion-label>
-            <ion-select #edad formControlName="edad" placeholder="Seleccione una opcion">
-              <ion-select-option value="adulto">Adulto</ion-select-option>
-              <ion-select-option value="joven">Joven</ion-select-option>
-              <ion-select-option value="niño">Niño</ion-select-option>
-            </ion-select>
-          </ion-item>
           <div class="error">
           <ion-label  color="danger" *ngIf="registerpacdata.controls['edad'].errors?.required && (registerpacdata.controls['edad'].touched || registerpacdata.controls['edad'].dirty)">* El motivo es obligatorio </ion-label>
 

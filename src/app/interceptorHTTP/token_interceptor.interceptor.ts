@@ -51,6 +51,7 @@ import { NavController } from '@ionic/angular';
         catchError((err: HttpErrorResponse) => {
   
           if (err.status === 401) {
+            this.token.logout();
             this.navctrl.navigateForward('login');
           }
   

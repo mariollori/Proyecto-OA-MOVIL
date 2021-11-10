@@ -4,7 +4,7 @@
   <ion-header>
     <ion-toolbar color="primary">
       
-          <ion-item class="user_perfil">
+          <ion-item class="user_perfil" >
             <ion-avatar slot="start">
               <img src="assets/icon/user.png" />
             </ion-avatar>
@@ -19,11 +19,11 @@
   </ion-header>
   <ion-content>
     <ion-list>
-     <ion-item (click)="rout()" >
+     <ion-item (click)="rout()" detail  button="true">
          <ion-icon slot="start" icon='person-outline' class="component-icon component-icon-primary"></ion-icon>
          <ion-label>Perfil</ion-label>
       </ion-item>
-      <ion-item (click)="home()" >
+      <ion-item (click)="home()" detail  button="true">
          <ion-icon slot="start" icon='list-outline' class="component-icon component-icon-primary"></ion-icon>
          <ion-label>Lista de Pacientes</ion-label>
       </ion-item>

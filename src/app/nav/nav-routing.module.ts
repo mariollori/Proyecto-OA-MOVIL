@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from '../guards/auth.guard';
 import { ListapacComponent } from './listapac/listapac/listapac.component';
 
 import { NavPage } from './nav.page';
@@ -12,12 +13,13 @@ const routes: Routes = [
     children:[
       {
         path: 'perfil',
-        component: PerfilComponent,},
+        component: PerfilComponent, canActivate:[AuthGuard]},
         {
           path: 'listapac',
-          component: ListapacComponent,}
+          component: ListapacComponent,canActivate:[AuthGuard]}
     ]
-  }
+  },
+ 
 ];
 
 @NgModule({
