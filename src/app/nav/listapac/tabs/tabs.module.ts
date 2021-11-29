@@ -12,6 +12,8 @@ import { MenupopoverComponent } from '../../menu/menupopover/menupopover.compone
 import { DetallePacComponent } from '../../detailpaciente/detalle-pac/detalle-pac.component';
 import { RegistroAtencionComponent } from '../../registro_atencion/registro-atencion/registro-atencion.component';
 import { AtenPendientesComponent } from '../atencionespen/aten-pendientes/aten-pendientes.component';
+import { CancelaratenComponent } from '../cancelaratencion/cancelaraten/cancelaraten.component';
+import { ModificaratenpendComponent } from '../atencionespen/modificaratenpend/modificaratenpend.component';
 
 @NgModule({
   imports: [
@@ -21,6 +23,6 @@ import { AtenPendientesComponent } from '../atencionespen/aten-pendientes/aten-p
     TabsPageRoutingModule,
     ReactiveFormsModule,
   ],
-  declarations: [TabsPage,ListapacComponent,MenupopoverComponent,DetallePacComponent,RegistroAtencionComponent, AtenPendientesComponent]
+  declarations: [TabsPage,ListapacComponent,MenupopoverComponent,DetallePacComponent,RegistroAtencionComponent, AtenPendientesComponent,CancelaratenComponent,ModificaratenpendComponent]
 })
 export class TabsPageModule {}

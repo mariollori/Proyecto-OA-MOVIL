@@ -1,44 +1,47 @@
- <ion-list>
-          <ion-list-header >
-            <ion-label class="title">
-              Detalles de consulta de: {{nombre }}
-            </ion-label>
-          </ion-list-header>
-       <form>
-          <ion-item>
-            <ion-label position="floating">Edad</ion-label>
-       <ion-input [(ngModel)]="pac.edad" name="edad" disabled ></ion-input>
-       <ion-icon name="hourglass" slot="end"></ion-icon>
-      
-                
-          </ion-item>
-       
-         
-            
+ <ion-content [fullscreen]>
 
-          <ion-item>
-           <ion-label position="floating">Motivo</ion-label>
-
-             <ion-input type="text" [(ngModel)]="pac.motivo"  disabled name="Correo"></ion-input>
-     
-               <ion-icon name="reader"  slot="end" ></ion-icon>
-          </ion-item>
-
-
-           <ion-item>
-           <ion-label position="floating">Descripcion</ion-label>
-             <ion-textarea type="text" [(ngModel)]="pac.descripcion" disabled  name="Apellidos"></ion-textarea>
-     
-          <ion-icon name="book" slot="end" ></ion-icon>
-          </ion-item>
-             </form>
-
-
+  <ion-list>
+    <ion-list-header>
+      <ion-label class="title">
+        Paciente: {{nombre }}
+      </ion-label>
+    </ion-list-header>
+  
+    <form>
+      <ion-item>
+        <ion-label >Edad:</ion-label>
     
-             <ion-buttons (click)="cerrar()">
-            <ion-button>Cerrar</ion-button>
-             </ion-buttons>
-
-        
- 
-        </ion-list>
+        <ion-icon name="hourglass" slot="start"></ion-icon>
+        <ion-input [(ngModel)]="pac.edad" name="edad" disabled></ion-input>
+  
+      </ion-item>
+     
+  
+  
+  
+      <ion-item>
+        <ion-label >Motivo:</ion-label>
+  
+        <ion-input type="text" [(ngModel)]="pac.motivo" disabled name="Correo"></ion-input>
+        <ion-icon name="reader" slot="start"></ion-icon>
+      </ion-item>
+      
+       
+      <ion-item>
+        <ion-icon name="book" slot="start"></ion-icon>
+        <ion-label  >Descripcion:</ion-label>
+      </ion-item>
+      <ion-textarea type="text"  disabled [(ngModel)]="pac.descripcion"
+      name="Apellidos"></ion-textarea>
+  
+   
+    </form>
+  
+  
+  
+    
+  
+  
+  
+  </ion-list>
+ </ion-content>

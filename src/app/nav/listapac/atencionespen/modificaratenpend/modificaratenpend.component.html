@@ -1,0 +1,19 @@
+
+<ion-toolbar>
+  <ion-title>Modificar proxima fecha</ion-title>
+</ion-toolbar>
+<ion-content>
+  <ion-item>
+    <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="fecha"  placeholder="Fecha de proxima sesion"></ion-datetime>
+    <ion-icon slot="end"  name="calendar"></ion-icon>
+  </ion-item>
+  
+  <ion-item>
+    <ion-icon slot="end"  name="time"></ion-icon>
+    <ion-label>Hora de la sesion</ion-label>
+    <ion-datetime display-format="HH:mm"  [(ngModel)]="hora" picker-format="HH:mm" ></ion-datetime>
+  </ion-item>
+
+  <ion-button (click)="modificarfecha()" ><ion-icon slot="start" name="sync" ></ion-icon>Modificar sesion
+  </ion-button>
+</ion-content>

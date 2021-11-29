@@ -10,13 +10,15 @@ import { TokenService } from '../services/token.service';
 })
 export class NavPage implements OnInit {
   nombrecompleto;
+  tipo;
   constructor(private service:PacienteService ,private menu: MenuController,private navCtrl: NavController,private token:TokenService) { }
   ngOnInit(): void {
     this.service.getuser(this.token.usuario.idpersonal).subscribe(
       data=>{
         console.log(data)
+         this.tipo=data[0].tipo;
       
-         this.nombrecompleto= data[0].nombre + ' ' +  data[0].apellido;
+         this.nombrecompleto= data[0].nombre ;
       }
     )
   }
@@ -36,7 +38,7 @@ export class NavPage implements OnInit {
   }
 
   rout(){
-    this.navCtrl.navigateForward('nav/perfil');
+    this.navCtrl.navigateForward('nav/perfil/datapersonal');
     this.menu.close();
   }
   home(){

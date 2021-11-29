@@ -1,0 +1,12 @@
+ion-tab-bar{
+    background-color: black;
+
+    ion-tab-button{
+        background-color: rgba(163, 43, 52,0.1);
+       
+    }
+    ion-tab-button::after{
+        color: white;
+
+    }
+}

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, ModalController, PopoverController } from '@ionic/angular';
+import { AlertController, LoadingController, ModalController, PopoverController } from '@ionic/angular';
 import { PacienteService } from 'src/app/services/paciente.service';
 import { TokenService } from 'src/app/services/token.service';
 import { DetallePacComponent } from '../../detailpaciente/detalle-pac/detalle-pac.component';
 import { MenupopoverComponent } from '../../menu/menupopover/menupopover.component';
 import { RegistroAtencionComponent } from '../../registro_atencion/registro-atencion/registro-atencion.component';
+import { CancelaratenComponent } from '../cancelaratencion/cancelaraten/cancelaraten.component';
 
 @Component({
   selector: 'app-listapac',
@@ -13,8 +14,16 @@ import { RegistroAtencionComponent } from '../../registro_atencion/registro-aten
 })
 export class ListapacComponent implements OnInit {
 
-  constructor(public modalController: ModalController,public alertCtrl: AlertController,private token:TokenService, private pac:PacienteService,public popoverController: PopoverController) { }
-  
+  constructor(public modalController: ModalController,public loadingController: LoadingController,public alertCtrl: AlertController,private token:TokenService, private pac:PacienteService,public popoverController: PopoverController) { }
+  loading:any;
+ async presentLoading() {
+    this.loading = await this.loadingController.create({
+     
+      message: 'Cargando...',
+      
+    });
+    return  this.loading.present();
+  }
   
   datalist:any = [];
   ngOnInit() {
@@ -25,8 +34,10 @@ export class ListapacComponent implements OnInit {
 
   } 
   llamarpacientes(){
+    this.presentLoading();
     this.pac.getlistpac(this.token.usuario.idpersonal).subscribe(
-      data=>{this.datalist=data; console.log(data)}
+      data=>{this.datalist=data; 
+               this.loading.dismiss();}
     )
   }
   async modeldetail(pac) {
@@ -71,6 +82,11 @@ export class ListapacComponent implements OnInit {
        this.showAlertsuccess('Ultima atencion registrada correctamente.');
           this.llamarpacientes();  
           break;
+       case 3: 
+     
+       this.showAlertsuccess('Atencion Cancelada.');
+          this.llamarpacientes();  
+          break;
        default:
          break;
      }
@@ -101,7 +117,7 @@ export class ListapacComponent implements OnInit {
             
             break;
 
-          case 2:
+          case 2:this.registrarcancelacion(pac);
             
             break;
 
@@ -113,6 +129,17 @@ export class ListapacComponent implements OnInit {
             break;
         }
 
+  }
+
+
+  async registrarcancelacion(pac) {
+    const modal = await this.modalController.create({
+      component: CancelaratenComponent,
+      swipeToClose: true,
+      cssClass:'cancelarmodal',
+       componentProps: { data:pac}
+    });
+    return await modal.present();
   }
 
 }

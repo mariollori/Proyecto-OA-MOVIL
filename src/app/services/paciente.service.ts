@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Cancelacion } from '../models/cancelacion';
 import { Paciente } from '../models/paciente';
 import { Persona } from '../models/persona';
 import { AuthService } from './auth.service';
@@ -41,14 +42,14 @@ export class PacienteService {
    
     return this.http.get<any>(this.urlEndpoint3 + '/getidatencion/' + idasignacion);
   }
-  registrardata1(paciente, atencion, id,fecha):Observable<String>{
+  registrardata1(paciente, atencion, id,fecha,hora):Observable<String>{
    
-    return this.http.post<String>(this.urlEndpoint3 + '/registrardata1' ,{paciente,atencion,id,fecha});
+    return this.http.post<String>(this.urlEndpoint3 + '/registrardata1' ,{paciente,atencion,id,fecha,hora});
   }
 
-  registrardata2(atencion, id,fecha):Observable<String>{
+  registrardata2(atencion, id,fecha,hora):Observable<String>{
    
-    return this.http.post<String>(this.urlEndpoint3 + '/registrardata2' ,{atencion,id,fecha});
+    return this.http.post<String>(this.urlEndpoint3 + '/registrardata2' ,{atencion,id,fecha,hora});
   }
   registrardata3(atencion, id,derivacion):Observable<String>{
    
@@ -58,5 +59,38 @@ export class PacienteService {
    
     return this.http.get<any>(this.urlEndpoint3 + '/listatencion_pend/' + idpersonal);
   }
- 
+
+   crearcancelacion(cancelacion:Cancelacion,idpaciente):Observable<any>{
+    return this.http.post<any>(this.urlEndpoint2 + '/crearcancelacion/post', { cancelacion,idpaciente})
+   }
+   
+
+
+   changedataper(persona):Observable<any>{
+     return this.http.put<any>(this.urlEndpoint2 + '/putdataper',{persona});
+
+   }
+   changedatasch(personal):Observable<any>{
+    return this.http.put<any>(this.urlEndpoint2 + '/putdatasch',{personal});
+
+  }
+
+
+  updatefecha(fecha,id,hora):Observable<any>{
+    return this.http.put<any>(this.urlEndpoint3 + '/updatefecha',{fecha,id,hora});
+
+  }
+
+
+  loginpac(nro_cita,dni):Observable<any>{
+    return this.http.post<any>(this.urlEndpoint2 + '/loginpac',{nro_cita,dni});
+
+  }
+
+  getdatasignacion(idpaciente):Observable<any>{
+    return this.http.get<any>(this.urlEndpoint2 + '/dataasig/'+ idpaciente)
+  }
+  getdataperson(idpersona):Observable<any>{
+    return this.http.get<any>(this.urlEndpoint2 + '/persondata/'+ idpersona)
+  }
 }

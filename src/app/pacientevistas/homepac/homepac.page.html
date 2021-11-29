@@ -1,0 +1,77 @@
+
+<ion-app>
+  <h3>Bienvenido!!</h3> 
+  <h5>{{persona.nombre}}</h5>
+  <ion-chip>
+    <ion-icon  name="accessibility"></ion-icon>
+    <ion-label>Paciente</ion-label>
+   
+  </ion-chip>
+  <img src="assets/icon/paisaje.jpg" class="out" />
+  <div class="active"></div>
+  <ion-toolbar>
+   <ion-menu-button slot="start" menu="menuhome"></ion-menu-button>
+  </ion-toolbar>
+  <ion-content [fullscreen]>
+    
+    <ion-segment (ionChange)="segmentChanged($event)" value="info" mode="ios">
+      <ion-segment-button  value="info" class="infobtn">
+        <ion-label><ion-icon name="information-circle" slot="start"></ion-icon>Info</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="valorar" class="valuebtn">
+        <ion-label><ion-icon name="star" slot="start"></ion-icon>Valorar</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+
+    <div id="container" *ngIf="value=='info'" >
+    
+        <h4 *ngIf="datapsi==null">Aun no se le asigna un especialista. Pronto se le notificara</h4>
+     
+        <div *ngIf="datapsi" >
+
+          <h2>Psicologo Asignado</h2>
+          <img src="assets/icon/avataruser.png"  class="logopsi">
+
+
+          <ion-list lines="none" >
+            <ion-item>
+              <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+              <ion-label position="stacked">Nombre </ion-label>
+              <ion-input required type="text" [(ngModel)]="datapsi.nombre" disabled ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+              <ion-label position="stacked">Apellidos </ion-label>
+              <ion-input required type="text"  [(ngModel)]="datapsi.apellido" disabled ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-icon name="mail" slot="start"></ion-icon>
+          
+              <ion-label position="stacked">Email </ion-label>
+              <ion-input required type="text " [(ngModel)]="datapsi.correo" disabled ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-icon name="call" slot="start"></ion-icon>
+              <ion-label position="stacked">Telefono </ion-label>
+              <ion-input required type="text"  [(ngModel)]="datapsi.telefono" disabled></ion-input>
+            </ion-item>
+        </ion-list>
+
+        </div>
+      
+    </div>
+    
+    <div id="container" *ngIf="value=='valorar'">
+         
+      
+    </div>
+    
+
+    <ion-fab slot="fixed"  (click)="logout()" horizontal="end" vertical="bottom">
+      <ion-fab-button><ion-icon name="power"></ion-icon></ion-fab-button>
+    </ion-fab>
+  </ion-content>
+
+
+</ion-app>

@@ -1,0 +1,59 @@
+
+
+
+
+
+ion-list{
+    padding: 20px;
+    ion-item{
+        margin-bottom: 8px;
+    }
+    ion-input{
+        width: 50vw;
+        --border: none;
+    }
+    ion-label{
+        font-size: 18px;
+    }
+}
+
+.editbtn{
+    background-color: #3a94bb;
+    width: 40vw;
+    
+    margin-left: 30vw;
+    color: white;
+}
+
+.savebtns{
+    display: flex;
+    justify-content: center;
+    .btn1{
+        background-color: rgb(209, 68, 68);
+        width: 40vw;
+        
+        
+        color: white;
+      
+
+
+    }
+    .btn2{
+        background-color: #3a94bb;
+        width: 40vw;
+        
+        
+        color: white;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

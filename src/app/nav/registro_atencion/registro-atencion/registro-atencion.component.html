@@ -1,5 +1,5 @@
 <ion-content >
-    <ion-toolbar  color="primary">
+    <ion-toolbar  >
         <ion-title>Registrar Atencion</ion-title>
         <ion-buttons (click)="cerrar()" slot="end">
           <ion-button>
@@ -8,7 +8,7 @@
         </ion-buttons>
     </ion-toolbar>
     <div class="img" >
-    <img src="assets/icon/register_atencion.png">
+    <img src="assets/icon/atencion.jpg">
     </div>
 
      <ion-list >
@@ -22,7 +22,7 @@
          <form [formGroup]="datapaciente">
           <ion-item>
             <ion-input type="text" formControlName="religion"  placeholder="Religion"></ion-input>
-            <ion-icon position="final" color="primary" name="earth"></ion-icon>
+            <ion-icon position="final"  name="earth"></ion-icon>
           </ion-item>
             <div class="error">
           <ion-label  color="danger" *ngIf="datapaciente.controls['religion'].errors?.required && (datapaciente.controls['religion'].touched || datapaciente.controls['religion'].dirty)">* Campo obligatorio </ion-label>
@@ -30,7 +30,7 @@
           </div>
           <ion-item>
             <ion-input type="text" formControlName="ciudad"  placeholder="Ciudad"></ion-input>
-            <ion-icon position="final" color="primary" name="business"></ion-icon>
+            <ion-icon position="final"  name="business"></ion-icon>
           </ion-item>
            <div class="error">
           <ion-label  color="danger" *ngIf="datapaciente.controls['ciudad'].errors?.required && (datapaciente.controls['ciudad'].touched || datapaciente.controls['ciudad'].dirty)">* Campo obligatorio </ion-label>
@@ -39,7 +39,7 @@
 
           <ion-item>
             <ion-datetime displayFormat="DD/MM/YYYY" formControlName="fecha_nacimiento"  placeholder="Fecha de Nacimiento"></ion-datetime>
-            <ion-icon slot="end" color="primary" name="calendar"></ion-icon>
+            <ion-icon slot="end"  name="calendar"></ion-icon>
           </ion-item>
            <div class="error">
           <ion-label  color="danger" *ngIf="datapaciente.controls['fecha_nacimiento'].errors?.required && (datapaciente.controls['fecha_nacimiento'].touched || datapaciente.controls['fecha_nacimiento'].dirty)">* Campo obligatorio </ion-label>
@@ -59,7 +59,7 @@
 
           <ion-item>
             <ion-input type="text" formControlName="edad"  placeholder="Edad"></ion-input>
-            <ion-icon position="final" color="primary" name="man"></ion-icon>
+            <ion-icon position="final"  name="man"></ion-icon>
           </ion-item>
            <div class="error">
           <ion-label  color="danger" *ngIf="datapaciente.controls['edad'].errors?.required && (datapaciente.controls['edad'].touched || datapaciente.controls['edad'].dirty)">* Campo obligatorio </ion-label>
@@ -68,7 +68,7 @@
 
            <ion-item>
             <ion-input type="text" formControlName="ocupacion"  placeholder="Ocupacion"></ion-input>
-            <ion-icon position="final" color="primary" name="bag"></ion-icon>
+            <ion-icon position="final"  name="bag"></ion-icon>
           </ion-item>
 
           
@@ -84,9 +84,9 @@
          <form [formGroup]="datosatencion">
         
             <ion-item>
-               <ion-label position="floating">Nro_Sesion</ion-label>
-               <ion-input type="text" formControlName="nro_sesion" ></ion-input>
-               <ion-icon name="information" color="primary"  slot="end" ></ion-icon>
+              <ion-icon name="information"   slot="start" ></ion-icon>
+               <ion-label >Nro_Sesion: &nbsp;</ion-label>
+               <ion-input type="text" formControlName="nro_sesion" disabled ></ion-input>
             </ion-item>
              <div class="error">
           <ion-label  color="danger" *ngIf="datosatencion.controls['nro_sesion'].errors?.required && (datosatencion.controls['nro_sesion'].touched || datosatencion.controls['nro_sesion'].dirty)">* Campo obligatorio </ion-label>
@@ -96,7 +96,7 @@
 
             <ion-item>
                <ion-input type="text" formControlName="condicion" placeholder="Condicion" ></ion-input>
-               <ion-icon name="id-card" color="primary"  slot="end" ></ion-icon>
+               <ion-icon name="id-card"   slot="end" ></ion-icon>
             </ion-item>
              <div class="error">
           <ion-label  color="danger" *ngIf="datosatencion.controls['condicion'].errors?.required && (datosatencion.controls['condicion'].touched || datosatencion.controls['condicion'].dirty)">* Campo obligatorio </ion-label>
@@ -106,7 +106,7 @@
 
             <ion-item>
              <ion-input type="text" formControlName="evidencia" placeholder="Evidencia" ></ion-input>
-               <ion-icon name="checkmark-done" color="primary"  slot="end" ></ion-icon>
+               <ion-icon name="checkmark-done"   slot="end" ></ion-icon>
             </ion-item>
 
              <div class="error">
@@ -117,7 +117,7 @@
 
             <ion-item>
                <ion-textarea type="text" formControlName="observaciones" placeholder="Observaciones" ></ion-textarea>
-               <ion-icon name="reader" color="primary"  slot="end" ></ion-icon>
+               <ion-icon name="reader"   slot="end" ></ion-icon>
           </ion-item>
 
            <div class="error">
@@ -137,13 +137,19 @@
          <form [formGroup]="fechaatencion">
            <ion-item>
             <ion-datetime displayFormat="DD/MM/YYYY" formControlName="fecha"  placeholder="Fecha de proxima sesion"></ion-datetime>
-            <ion-icon slot="end" color="primary" name="calendar"></ion-icon>
+            <ion-icon slot="end"  name="calendar"></ion-icon>
           </ion-item>
           
            <div class="error">
           <ion-label  color="danger" *ngIf="fechaatencion.controls['fecha'].errors?.required && (fechaatencion.controls['fecha'].touched || fechaatencion.controls['fecha'].dirty)">* Campo obligatorio </ion-label>
+          
 
           </div>
+          <ion-item>
+            <ion-icon slot="end"  name="time"></ion-icon>
+            <ion-label>Hora de la sesion</ion-label>
+            <ion-datetime display-format="HH:mm"  formControlName="hora" picker-format="HH:mm" ></ion-datetime>
+          </ion-item>
          </form>
        </div>
         <div class="derivacion" *ngIf="counter==2">
@@ -151,7 +157,7 @@
         
            <ion-item>
             <ion-label>¿Derivar con especialista?</ion-label>
-            <ion-toggle [(ngModel)]="derivacion" color="primary"></ion-toggle>
+            <ion-toggle [(ngModel)]="derivacion" ></ion-toggle>
 
           </ion-item>
           
@@ -160,9 +166,10 @@
        </div>
    
      </ion-list>
- <ion-button class="guardar_btn" *ngIf="counter==0"  (click)="registrar()" [attr.disabled]="datapaciente.invalid || datosatencion.invalid || fechaatencion.invalid  ">Guardar</ion-button>
-        <ion-button class="guardar_btn"  *ngIf="counter==1" (click)="registrar()" [attr.disabled]=" datosatencion.invalid || fechaatencion.invalid  ">Guardar</ion-button>
-            <ion-button class="guardar_btn"  *ngIf="counter==2" (click)="registrar()" [attr.disabled]=" datosatencion.invalid ">Guardar</ion-button>
+    
+ <ion-button class="guardar_btn" *ngIf="counter==0"  (click)="registrar()" [attr.disabled]="datapaciente.invalid || datosatencion.invalid || fechaatencion.invalid  "> <ion-icon slot="start" name="checkmark-done"></ion-icon>Guardar</ion-button>
+        <ion-button class="guardar_btn"  *ngIf="counter==1" (click)="registrar()" [attr.disabled]=" datosatencion.invalid || fechaatencion.invalid  "> <ion-icon slot="start" name="checkmark-done"></ion-icon>Guardar</ion-button>
+            <ion-button class="guardar_btn"  *ngIf="counter==2" (click)="registrar()" [attr.disabled]=" datosatencion.invalid "> <ion-icon slot="start" name="checkmark-done"></ion-icon>Guardar</ion-button>
     
 
 

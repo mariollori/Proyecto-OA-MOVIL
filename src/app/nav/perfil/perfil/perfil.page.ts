@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
 import { PacienteService } from 'src/app/services/paciente.service';
 import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-perfil',
-  templateUrl: './perfil.component.html',
-  styleUrls: ['./perfil.component.scss'],
+  templateUrl: './perfil.page.html',
+  styleUrls: ['./perfil.page.scss'],
 })
-export class PerfilComponent implements OnInit {
+export class PerfilPage implements OnInit {
+
   nombrecompleto;
   telefono;
   tipo;
@@ -21,8 +21,8 @@ export class PerfilComponent implements OnInit {
       data=>{
     console.log(data)
        this.correo= data[0].correo;
-       this.tipo= data[0].tipo.toUpperCase();
-         this.nombrecompleto= data[0].nombre + ' ' +  data[0].apellido;
+       this.tipo= data[0].tipo;
+         this.nombrecompleto= data[0].nombre ;
          this.telefono=data[0].telefono;
       }
     )

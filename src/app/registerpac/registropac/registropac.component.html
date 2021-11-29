@@ -1,6 +1,6 @@
 <ion-content [fullscreen]="true"
   [scrollEvents]="true">
-     <ion-toolbar color="primary">
+     <ion-toolbar >
        
              <ion-title>Registrar Solicitud</ion-title>
         <ion-buttons (click)="cerrar()" slot="end">
@@ -16,7 +16,7 @@
  
      <div class="header">
      
-      <img class="registerlogo"  src="assets/icon/logoregister.png">
+      <img class="registerlogo"  src="assets/icon/registropac.png">
     </div>
 
     <div class="form" >
@@ -47,18 +47,14 @@
           </div>
     
 
-          <div class="error">
-          <ion-label  color="danger" *ngIf="registerpacdata.controls['edad'].errors?.required && (registerpacdata.controls['edad'].touched || registerpacdata.controls['edad'].dirty)">* El motivo es obligatorio </ion-label>
-
-          </div>
-
+         
           <ion-item>
             <ion-textarea formControlName="descripcion" #descripcion placeholder="Descripcion del motivo" ></ion-textarea>
          
         <ion-icon name="document-text-outline"></ion-icon>
           </ion-item>
           <div class="error">
-          <ion-label  color="danger" *ngIf="registerpacdata.controls['descripcion'].errors?.required && (registerpacdata.controls['descripcion'].touched || registerpacdata.controls['descripcion'].dirty)">* El motivo es obligatorio </ion-label>
+          <ion-label  color="danger" *ngIf="registerpacdata.controls['descripcion'].errors?.required && (registerpacdata.controls['descripcion'].touched || registerpacdata.controls['descripcion'].dirty)">* La descripcion es obligatorio </ion-label>
 
           </div>
 
@@ -80,7 +76,7 @@
     <ion-icon position="final" color="primary" name="person-circle-outline"></ion-icon>
           </ion-item>
            <div class="error">
-           <ion-label  color="danger" *ngIf="registerpersonaldata.controls['nombre'].errors?.required && (registerpersonaldata.controls['nombre'].touched || registerpersonaldata.controls['nombre'].dirty)">* El motivo es obligatorio </ion-label>
+           <ion-label  color="danger" *ngIf="registerpersonaldata.controls['nombre'].errors?.required && (registerpersonaldata.controls['nombre'].touched || registerpersonaldata.controls['nombre'].dirty)">* El nombre es obligatorio </ion-label>
           </div>
           <ion-item>
              <ion-input type="text" formControlName="apellido"  placeholder="Apellidos"></ion-input>
@@ -88,7 +84,7 @@
           <ion-icon name="people-circle-outline" color="primary"></ion-icon>
           </ion-item>
             <div class="error">
-           <ion-label  color="danger" *ngIf="registerpersonaldata.controls['apellido'].errors?.required && (registerpersonaldata.controls['apellido'].touched || registerpersonaldata.controls['apellido'].dirty)">* El motivo es obligatorio </ion-label>
+           <ion-label  color="danger" *ngIf="registerpersonaldata.controls['apellido'].errors?.required && (registerpersonaldata.controls['apellido'].touched || registerpersonaldata.controls['apellido'].dirty)">* El apellido es obligatorio </ion-label>
           </div>
 
           <ion-item>
@@ -98,7 +94,7 @@
           </ion-item>
 
             <div class="error">
-           <ion-label  color="danger" *ngIf="registerpersonaldata.controls['correo'].errors?.required && (registerpersonaldata.controls['correo'].touched || registerpersonaldata.controls['correo'].dirty)">* El motivo es obligatorio </ion-label>
+           <ion-label  color="danger" *ngIf="registerpersonaldata.controls['correo'].errors?.required && (registerpersonaldata.controls['correo'].touched || registerpersonaldata.controls['correo'].dirty)">* El correo es obligatorio </ion-label>
             <ion-label  color="danger" *ngIf="registerpersonaldata.controls['correo'].errors?.email && (registerpersonaldata.controls['correo'].touched || registerpersonaldata.controls['correo'].dirty)">* El correo no es valido </ion-label>
           </div>
 
@@ -108,7 +104,7 @@
     <ion-icon name="call-outline" color="primary"></ion-icon>
           </ion-item>
              <div class="error">
-           <ion-label  color="danger" *ngIf="registerpersonaldata.controls['telefono'].errors?.required && (registerpersonaldata.controls['telefono'].touched || registerpersonaldata.controls['telefono'].dirty)">* El motivo es obligatorio </ion-label>
+           <ion-label  color="danger" *ngIf="registerpersonaldata.controls['telefono'].errors?.required && (registerpersonaldata.controls['telefono'].touched || registerpersonaldata.controls['telefono'].dirty)">* El telfono es obligatorio </ion-label>
           </div>
 
 
@@ -123,8 +119,20 @@
             </ion-select>
           </ion-item>
              <div class="error">
-           <ion-label  color="danger" *ngIf="registerpersonaldata.controls['genero'].errors?.required && (registerpersonaldata.controls['genero'].touched || registerpersonaldata.controls['genero'].dirty)">* El motivo es obligatorio </ion-label>
+           <ion-label  color="danger" *ngIf="registerpersonaldata.controls['genero'].errors?.required && (registerpersonaldata.controls['genero'].touched || registerpersonaldata.controls['genero'].dirty)">* El genero es obligatorio </ion-label>
           </div>
+
+
+
+          
+          <ion-item>
+            <ion-input type="number" formControlName="dni"  placeholder="Dni"></ion-input>
+   
+             <ion-icon name="finger-print" color="primary"></ion-icon>
+        </ion-item>
+           <div class="error">
+         <ion-label  color="danger" *ngIf="registerpersonaldata.controls['dni'].errors?.required && (registerpersonaldata.controls['dni'].touched || registerpersonaldata.controls['dni'].dirty)">* El dni es obligatorio </ion-label>
+        </div>
              </form>
         </ion-list>
 

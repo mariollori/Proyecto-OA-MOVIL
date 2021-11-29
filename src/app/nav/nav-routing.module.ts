@@ -4,7 +4,8 @@ import { AuthGuard } from '../guards/auth.guard';
 
 
 import { NavPage } from './nav.page';
-import { PerfilComponent } from './perfil/perfil/perfil.component';
+
+
 
 const routes: Routes = [
   {
@@ -13,13 +14,17 @@ const routes: Routes = [
     children:[
       {
         path: 'perfil',
-        component: PerfilComponent, canActivate:[AuthGuard]},
-        
+        loadChildren:() => import('./perfil/perfil/perfil.module').then(m => m.PerfilPageModule)},
+     
           {
             path: 'tabs',
             loadChildren: () => import('./listapac/tabs/tabs.module').then( m => m.TabsPageModule)
           },
     ]
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil/perfil.module').then( m => m.PerfilPageModule)
   },
  
  

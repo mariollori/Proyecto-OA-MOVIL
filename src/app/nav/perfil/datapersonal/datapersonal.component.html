@@ -1,0 +1,50 @@
+<ion-content [fullscreen]>
+  <ion-list lines="none" >
+    <ion-item>
+      <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+      <ion-label position="stacked">Nombres </ion-label>
+      <ion-input required type="text" [(ngModel)]="nombre" [disabled]="!editstate" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+      <ion-label position="stacked">Apellidos </ion-label>
+      <ion-input required type="text"  [(ngModel)]="apellido" [disabled]="!editstate" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="mail" slot="start"></ion-icon>
+  
+      <ion-label position="stacked">Email </ion-label>
+      <ion-input required type="text " [(ngModel)]="correo" [disabled]="!editstate" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="call" slot="start"></ion-icon>
+      <ion-label position="stacked">Telefono </ion-label>
+      <ion-input required type="text"  [(ngModel)]="telefono" [disabled]="!editstate"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="person" slot="start"></ion-icon>
+      <ion-label position="stacked">
+        Genero
+      </ion-label>
+      <ion-select [(ngModel)]="genero"  [disabled]="!editstate" placeholder="Seleccione una opcion">
+        <ion-select-option value="H">Hombre</ion-select-option>
+        <ion-select-option value="M">Mujer</ion-select-option>
+      </ion-select>
+    </ion-item>
+</ion-list>
+
+<ion-button (click)="activar()" class="editbtn" *ngIf="!editstate"fill="clear" shape="round">
+  Editar <ion-icon slot="start" name="pencil"></ion-icon>
+</ion-button>
+
+<div *ngIf="editstate" class="savebtns">
+  <ion-button (click)="desactive()"    class="btn1"  fill="clear" shape="round">
+    <ion-icon name="chevron-back" slot="start"></ion-icon>  Cancelar
+  </ion-button>
+  <ion-button (click)="save()"    class="btn2"   fill="clear" shape="round">
+    <ion-icon name="checkmark-done" slot="start"></ion-icon> Guardar
+  </ion-button>
+</div>
+
+
+</ion-content> 

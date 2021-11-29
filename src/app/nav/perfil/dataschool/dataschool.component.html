@@ -1,0 +1,56 @@
+<ion-content [fullscreen]>
+
+  <ion-list lines="none">
+   
+    <ion-item>
+      <ion-icon name="business" slot="start"></ion-icon>
+      <ion-label position="stacked" >Universidad:</ion-label>
+      
+      <ion-input placeholder=""  [(ngModel)]="universidad" [disabled]="!editstate" ></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-icon name="ribbon" slot="start"></ion-icon>
+      <ion-label position="stacked">Edad:</ion-label>
+      <ion-input placeholder=""  [(ngModel)]="edad" [disabled]="!editstate" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="id-card" slot="start"></ion-icon>
+      <ion-label position="stacked" >
+        Grado Academico
+      </ion-label>
+      <ion-select  [(ngModel)]="grado_academico" [disabled]="!editstate"   placeholder="Seleccione una opcion">
+        <ion-select-option value="primaria">Primaria</ion-select-option>
+        <ion-select-option value="secundaria">Secundaria</ion-select-option>
+        <ion-select-option value="universidad">Universidad</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="school" slot="start"></ion-icon>
+      <ion-label position="stacked">Ciclo:</ion-label>
+      <ion-input placeholder=""  [(ngModel)]="ciclo" [disabled]="!editstate" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="information" slot="start"></ion-icon>
+      <ion-label position="stacked">Grupo:</ion-label>
+      <ion-input placeholder=" "  [(ngModel)]="grupo" [disabled]="!editstate" ></ion-input>
+    </ion-item>
+
+    
+  
+  </ion-list>
+  <ion-button (click)="activar()" class="editbtn" *ngIf="!editstate"fill="clear" shape="round">
+    Editar <ion-icon slot="start" name="pencil"></ion-icon>
+  </ion-button>
+  
+  <div *ngIf="editstate" class="savebtns">
+    <ion-button (click)="desactive()"    class="btn1"  fill="clear" shape="round">
+      <ion-icon name="chevron-back" slot="start"></ion-icon>  Cancelar
+    </ion-button>
+    <ion-button (click)="save()"    class="btn2"   fill="clear" shape="round">
+      <ion-icon name="checkmark-done" slot="start"></ion-icon> Guardar
+    </ion-button>
+  </div>
+  
+</ion-content>
+

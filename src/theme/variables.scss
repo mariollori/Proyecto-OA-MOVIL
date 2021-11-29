@@ -40,9 +40,9 @@ $app-theme: mat.define-light-theme((
 :root {
   /** primary **/
   --ion-color-primary: #930534;
-  --ion-color-primary-rgb: 56, 128, 255;
+  --ion-color-primary-rgb: #ffffff;
   --ion-color-primary-contrast: #ffffff;
-  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-contrast-rgb:#ffffff;
   --ion-color-primary-shade: #971c45;
   --ion-color-primary-tint: #ad305a;
 
@@ -109,6 +109,16 @@ $app-theme: mat.define-light-theme((
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+
+  /** custom1 **/
+ 
+  --ion-color-custom1: #487ad3 ;
+  --ion-color-custom1-rgb: var(--ion-color-primary-rgb, 56, 128, 255) !important;
+  --ion-color-custom1-contrast: #fff !important;
+  --ion-color-custom1-contrast-rgb: var(--ion-color-primary-contrast-rgb, 255, 255, 255) !important;
+  --ion-color-custom1-shade: #a3afc3 !important;
+  --ion-color-custom1-tint: #487ad3;
 }
 $popover-md-width: 100px; $popover-ios-width: 100px; $popover-wp-width: 100px;
 

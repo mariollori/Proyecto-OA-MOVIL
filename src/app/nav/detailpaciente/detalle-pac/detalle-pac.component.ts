@@ -9,20 +9,22 @@ import { Paciente } from 'src/app/models/paciente';
 })
 export class DetallePacComponent implements OnInit {
   pac = new Paciente();
-  nombre :String;
-  constructor(public navParams: NavParams, private mdoalctr : ModalController) { }
+  nombre: String;
+  constructor(public navParams: NavParams, private mdoalctr: ModalController) { }
 
   ngOnInit() {
-    const key1= this.navParams.get('data');
+    
+    const key1 = this.navParams.get('data');
     this.nombre = key1['nombre'];
-     this.pac.descripcion = key1['descripcion'];
-     this.pac.motivo = key1['motivo'];
-     this.pac.edad = key1['edad'];
-   console.log(key1)
+    this.pac.descripcion = key1['descripcion'];
+    this.pac.motivo = key1['motivo'];
+    this.pac.edad = key1['edad'];
+    console.log(key1)
   }
 
 
-  cerrar(){
+  cerrar() {
     this.mdoalctr.dismiss();
   }
+  
 }

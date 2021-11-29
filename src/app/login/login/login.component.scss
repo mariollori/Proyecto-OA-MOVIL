@@ -11,7 +11,8 @@
   
     .logosuper{
       position: absolute;
-      left: 13vw;
+      width: 80vw;
+      left: 10vw;
       border-radius: 20px;
       top:45vh;
     }
@@ -44,5 +45,29 @@
      }
   
   }
+
+
+  ion-segment{
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 20px;
+  }
   
-  
+.pac{
+  width: 60%;
+  margin-left: 20%;
+  border-radius: 10px;
+  border: 1px solid black;
+
+  ion-icon{
+    color: #a2a7cc;
+  }
+  margin-top: 20px;
+}
+
+.loginpac{
+  --background: #0094db;
+  margin-top: 40px;
+  width: 60%;
+  margin-left: 2%;
+}

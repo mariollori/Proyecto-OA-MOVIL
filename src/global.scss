@@ -31,11 +31,28 @@
 $popover-md-width: 100px; $popover-ios-width: 100px; $popover-wp-width: 100px;
 
 .detailmodal .modal-wrapper {
-    height: 41%;
-    top: 80%;
+    height: 60%;
     position: absolute; 
-    top: 30%;
+    top: 20%;
     display: block;  
-    border-radius: 5%;
+    border-radius: 0;
     width: 80%;
+ }
+
+
+ .cancelarmodal .modal-wrapper{
+    height: 50%;
+    position: absolute; 
+    top: 15%;
+    display: block;  
+    border-radius: 0;
+    width: 80%;
+ }
+ .modprox .modal-wrapper{
+   height: 40%;
+   position: absolute; 
+   top: 30%;
+   display: block;  
+   border-radius: 0;
+   width: 80%;
  }

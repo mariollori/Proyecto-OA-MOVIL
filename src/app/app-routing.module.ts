@@ -17,11 +17,17 @@ const routes: Routes = [
     component:LoginComponent
   },
   {
+    path: 'homepac',
+    loadChildren: () => import('./pacientevistas/homepac/homepac.module').then( m => m.HomepacPageModule)
+  },
+  {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
   },
   { path: '**', pathMatch: 'full', redirectTo: 'login' },
+  
+ 
 ];
 
 @NgModule({

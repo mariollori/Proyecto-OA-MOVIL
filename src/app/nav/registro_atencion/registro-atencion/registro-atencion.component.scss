@@ -7,8 +7,8 @@
 }
 .img{
     height: 30%;
-    border-top: 10px solid #930534;
-    background-color: #930534;
+    border-top: 10px solid #419fe0;
+    background-color: #419fe0;
     width: 100%;
     text-align: center;
     border-bottom-left-radius: 10%;
@@ -50,7 +50,7 @@ ion-header{
 
 
 .guardar_btn{
-    background-color: #930534;
+    --background: #b5b9c0;
     border-radius: 10px;
     text-align: center;
     display: flex;
@@ -60,4 +60,12 @@ ion-header{
     margin-left: 100px;
     margin-bottom: 20px;
     margin-right: 100px;
+}
+
+ion-toolbar{
+
+}
+
+ion-icon{
+    color: #f84936;
 }

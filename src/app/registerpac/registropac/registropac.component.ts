@@ -24,13 +24,14 @@ export class RegistropacComponent implements OnInit {
       apellido: new FormControl('', Validators.required),
       correo: new FormControl('', [Validators.required,Validators.email]),
       genero: new FormControl('',  Validators.required),
-      telefono: new FormControl('', Validators.required)
+      telefono: new FormControl('', Validators.required),
+      dni:new FormControl('', Validators.required),
       
     });
     this.registerpacdata = new FormGroup({
       motivo: new FormControl('', Validators.required),
       descripcion: new FormControl('', Validators.required),
-      edad: new FormControl('', [Validators.required]),
+      
       
       
     });
