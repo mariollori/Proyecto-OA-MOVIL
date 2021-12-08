@@ -17,7 +17,7 @@ ion-toolbar{
       left: 8vw;
       z-index: 99;
     
-    
+    width: 17vh;
     
     background-color: white;
     height: 17vh;
@@ -51,7 +51,7 @@ ion-toolbar{
   }
   
   .menu{
-  margin-top: 25px;
+  margin-top: 45px;
   
     ion-icon{
       color: rgb(40 208 148);
@@ -65,12 +65,24 @@ ion-toolbar{
   }
 
   .active{
-    width: 15px;
+    width: 27px;
     border-radius: 50%;
-    height: 15px;
+    height: 27px;
     top: 21vh;
-    left: 33vw;
+    left: 32vw;
     position: absolute;
-    background-color: #28d094;
+    background-color: rgba(255, 255, 255, 0);
     z-index: 100;
+
+  }
+  .upload{
+    width: 27px;
+    border-radius: 50%;
+    height: 27px;
+    top: 21vh;
+    left: 32vw;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 101;
+    opacity: 0;
   }

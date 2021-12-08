@@ -43,6 +43,12 @@ ion-toolbar{
      z-index: 99;
     letter-spacing: 0.5px;
   }
+  .aligment{
+    position: absolute;
+    top: 15.5vh;
+    left: 76vw;
+     z-index: 99;
+  }
   h5{
     color: #ffffff;
     font-weight: bold;
@@ -92,7 +98,7 @@ ion-toolbar{
   }
 
   ion-segment{
-      margin-top: 40px;
+      margin-top: 70px;
       margin-left: 20%;
       width: 60%;
   }
@@ -112,12 +118,15 @@ ion-toolbar{
 }
 
 ion-fab-button{
-    --background: #28d094;
+    --background: #d91f1f;
+    width: 30px;
+    height: 30px;
 
 }
 
 .logopsi{
-    width: 20%;
+    width: 80px;
+    height: 80px;
     background-color: #c7c7c7;
     border-radius: 50%;
     border: 2px solid black;
@@ -130,4 +139,47 @@ h2{
 
 ion-list{
     padding-left: 10%;
+    margin-top: 20px;
+}
+
+.punt{
+  width: 80%;
+  margin: 0 auto;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.container2{
+  img{
+    width: 60%;
+    margin-left: 20%;
+    height: 200px;
+  }
+  h4{
+    text-align: center;
+  }
+}
+
+.puntajeactual{
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+    ion-label{
+      font-size: 25px;
+      margin-right: 10px;
+
+    }
+    ion-icon{
+      font-size: 20px;
+    }
+}
+
+.dataloader{
+  --background: rgb(44, 114, 155);
+  --spinner-color: rgb(26, 136, 121);
+
 }

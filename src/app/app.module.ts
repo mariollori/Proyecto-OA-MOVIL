@@ -14,7 +14,10 @@ import { RegistropacComponent } from './registerpac/registropac/registropac.comp
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login/login.component';
 import { HttpConfigInterceptor } from './interceptorHTTP/token_interceptor.interceptor';
-
+import { Camera } from '@awesome-cordova-plugins/camera/ngx';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
 @NgModule({
   declarations: [AppComponent, RegistropacComponent,LoginComponent],
   entryComponents: [],
@@ -30,9 +33,12 @@ import { HttpConfigInterceptor } from './interceptorHTTP/token_interceptor.inter
        MatStepperModule,
        ReactiveFormsModule,
        MatExpansionModule,
-       
+       AngularFireModule.initializeApp(environment.firebase),
+       AngularFireStorageModule,
       ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Camera,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpConfigInterceptor,

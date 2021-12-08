@@ -7,7 +7,7 @@ import { Usuario } from '../models/usuario';
   providedIn: 'root'
 })
 export class AuthService {
-  urlEndpoint = "http://localhost:5050/EX3/auth";
+  urlEndpoint = "https://proyectooa-backend.herokuapp.com/EX3/auth";
   constructor(private http:HttpClient) { }
 
   login(usuario: Usuario): Observable<any> {

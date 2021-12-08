@@ -4,13 +4,13 @@ import { Observable } from 'rxjs';
 import { Paciente } from '../models/paciente';
 import { Persona } from '../models/persona';
 import { Usuario } from '../models/usuario';
-
+import OneSignal from 'onesignal-cordova-plugin';
 @Injectable({
   providedIn: 'root'
 })
 export class TokenService {
 
-  urlEndpoint = "http://localhost:5050/EX3/auth";
+  urlEndpoint = "hhttps://proyectooa-backend.herokuapp.com/EX3/auth";
 
   constructor(private http: HttpClient) { }
   private _usuario: Usuario;
@@ -107,6 +107,6 @@ export class TokenService {
     localStorage.removeItem('persona');
     
     
-  
+    OneSignal.removeExternalUserId()
   }
 }

@@ -73,7 +73,7 @@ export class RegistropacComponent implements OnInit {
   }
   async showAlert(message) {  
     const alert = await this.alertCtrl.create({  
-      header: 'Solicitud registrada',    
+      header: 'Atencion registrada',    
       message,  
       buttons: ['OK']  
     });  

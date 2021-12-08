@@ -6,8 +6,11 @@
     <ion-icon  name="school"></ion-icon>
     <ion-label>{{tipo}}</ion-label>
   </ion-chip>
-  <img src="assets/icon/avataruser.png" class="out" />
-  <div class="active"></div>
+     <img class="out" id="imagendeperfil" />
+     <input type="file" class="upload" (change)="mostrar($event)"/>
+  <div class="active">
+    <ion-icon slot="start" name="camera" style="font-size: 25px;    color: dimgrey;" ></ion-icon>
+  </div>
   <ion-toolbar>
   
    <ion-menu-button slot="start" menu="menuhome"></ion-menu-button>
@@ -30,10 +33,7 @@
           <ion-label>Academico</ion-label>
         </ion-tab-button>
     
-        <ion-tab-button tab="horarios">
-          <ion-icon name="time"></ion-icon>
-          <ion-label>Horarios</ion-label>
-        </ion-tab-button>
+       
     
         
       </ion-tab-bar>

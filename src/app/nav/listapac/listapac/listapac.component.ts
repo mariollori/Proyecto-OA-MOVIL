@@ -51,7 +51,7 @@ export class ListapacComponent implements OnInit {
   }
   async showAlertsuccess(data) {  
     const alert = await this.alertCtrl.create({  
-      header: 'Solicitud registrada',    
+      header: 'Atencion registrada',    
       message: `<img src = "assets/icon/success.png" style=" width=25px ;height=25px" > ${data}`,  
       buttons: ['OK']  
     });  
@@ -83,8 +83,8 @@ export class ListapacComponent implements OnInit {
           this.llamarpacientes();  
           break;
        case 3: 
-     
-       this.showAlertsuccess('Atencion Cancelada.');
+
+         this.showAlertsuccess('Atencion Cancelada.');
           this.llamarpacientes();  
           break;
        default:
@@ -139,7 +139,19 @@ export class ListapacComponent implements OnInit {
       cssClass:'cancelarmodal',
        componentProps: { data:pac}
     });
-    return await modal.present();
+     await modal.present();
+    const { data } = await modal.onDidDismiss();
+     
+    switch (data['data']) {
+
+      case 3: 
+
+        this.showAlertsuccess('Atencion Cancelada.');
+         this.llamarpacientes();  
+         break;
+      default:
+        break;
+    }
   }
 
 }

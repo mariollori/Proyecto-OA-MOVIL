@@ -14,10 +14,13 @@ export class PacienteService {
   constructor(private http:HttpClient) { }
 
   
-  urlEndpoint = "http://localhost:5050/EX3/persona";
-  urlEndpoint2 = "http://localhost:5050/EX3/usuario";
-  urlEndpoint3 = "http://localhost:5050/EX3/paciente";
+  urlEndpoint = "https://proyectooa-backend.herokuapp.com/EX3/persona";
+  urlEndpoint2 = "https://proyectooa-backend.herokuapp.com/EX3/usuario";
+  urlEndpoint3 = "https://proyectooa-backend.herokuapp.com/EX3/paciente";
+  urlEndpoint4 = "https://proyectooa-backend.herokuapp.com/EX3/datos_psicologo";
+  
   crearpaciente(persona:Persona,paciente:Paciente):Observable<String>{
+
     console.log(persona)
     console.log(paciente)
   
@@ -70,8 +73,8 @@ export class PacienteService {
      return this.http.put<any>(this.urlEndpoint2 + '/putdataper',{persona});
 
    }
-   changedatasch(personal):Observable<any>{
-    return this.http.put<any>(this.urlEndpoint2 + '/putdatasch',{personal});
+   changedatasch(personal_ayuda,tipo):Observable<any>{
+    return this.http.put<any>(this.urlEndpoint4 + '/update/dataschool',{personal_ayuda,tipo});
 
   }
 
@@ -92,5 +95,12 @@ export class PacienteService {
   }
   getdataperson(idpersona):Observable<any>{
     return this.http.get<any>(this.urlEndpoint2 + '/persondata/'+ idpersona)
+  }
+  getpuntajeexist(idpaciente):Observable<any>{
+    return this.http.get<any>(this.urlEndpoint2 + '/puntajeexist/'+ idpaciente)
+  }
+  
+  crearvaloracion(idpaciente,idpersonal,puntaje):Observable<any>{
+    return this.http.post<any>(this.urlEndpoint2 + '/registrar/puntaje',{idpaciente,idpersonal,puntaje})
   }
 }

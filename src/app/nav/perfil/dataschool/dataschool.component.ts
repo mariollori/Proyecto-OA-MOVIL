@@ -11,14 +11,11 @@ import { TokenService } from 'src/app/services/token.service';
 })
 export class DataschoolComponent implements OnInit {
   editstate=false;
+  tipo;
   constructor(private service:PacienteService,private token:TokenService,public loadingController: LoadingController) { }
-  universidad;
-
-  ciclo;
-  grado_academico;
+  
   personal=new Personal();
-  grupo;
-  edad;
+ 
 
   loading:any;
   async presentLoading(message) {
@@ -37,12 +34,8 @@ export class DataschoolComponent implements OnInit {
     this.service.getuser(this.token.usuario.idpersonal).subscribe(
       data=>{
     console.log(data)
-       this.universidad= data[0].universidad;
-       this.ciclo= data[0].ciclo;
-       this.grado_academico=data[0].grado_academico;
-         this.grupo= data[0].grupo ;
-         this.edad=data[0].edad;
-       
+       this.tipo=data[0].tipo;
+       this.personal= data[0]; 
       }
     )
   }
@@ -58,18 +51,12 @@ export class DataschoolComponent implements OnInit {
   
     }
     save(){
-     
-      this.personal.universidad = this.universidad;
-      this.personal.ciclo=this.ciclo;
-      this.personal.grupo=this.grupo;
-      this.personal.edad=this.edad;
+
       this.personal.idpersonal= this.token.usuario.idpersonal;
-      this.personal.grado_academico=this.grado_academico;
       this.presentLoading('Guardando');
-      this.service.changedatasch(this.personal).subscribe(
+      this.service.changedatasch(this.personal,this.tipo).subscribe(
         data=>{
           this.loading.dismiss();
-          this.personal=new Personal();
           this.llamardata();
           this.editstate=false;
         }

@@ -1,4 +1,8 @@
+
 import { Component } from '@angular/core';
+import { Platform } from '@ionic/angular';
+import { PushService } from './pushnotify/push.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +11,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor() {}
+     
+      
+
 }

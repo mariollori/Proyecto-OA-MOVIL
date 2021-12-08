@@ -1,13 +1,17 @@
 
 <ion-app>
-  <h3>Bienvenido!!</h3> 
-  <h5>{{persona.nombre}}</h5>
+ 
+  <h5 style="text-transform: capitalize;">{{persona.nombre}}</h5>
+  <ion-fab slot="fixed" class="aligment" (click)="logout()" >
+    <ion-fab-button><ion-icon name="power"></ion-icon></ion-fab-button>
+  </ion-fab>
   <ion-chip>
     <ion-icon  name="accessibility"></ion-icon>
     <ion-label>Paciente</ion-label>
    
   </ion-chip>
-  <img src="assets/icon/paisaje.jpg" class="out" />
+  <img src="assets/icon/hombre.png" class="out" *ngIf="persona.genero=='H'" />
+  <img src="assets/icon/mujer.png" class="out" *ngIf="persona.genero=='M'" />
   <div class="active"></div>
   <ion-toolbar>
    <ion-menu-button slot="start" menu="menuhome"></ion-menu-button>
@@ -18,7 +22,11 @@
       <ion-segment-button  value="info" class="infobtn">
         <ion-label><ion-icon name="information-circle" slot="start"></ion-icon>Info</ion-label>
       </ion-segment-button>
-      <ion-segment-button value="valorar" class="valuebtn">
+      <ion-segment-button value="valorar" class="valuebtn" 
+
+      *ngIf="persona.estado=='Finalizado' || persona.estado=='Derivado'"
+      
+      >
         <ion-label><ion-icon name="star" slot="start"></ion-icon>Valorar</ion-label>
       </ion-segment-button>
     </ion-segment>
@@ -26,25 +34,23 @@
 
     <div id="container" *ngIf="value=='info'" >
     
-        <h4 *ngIf="datapsi==null">Aun no se le asigna un especialista. Pronto se le notificara</h4>
+        <h4 style="color: #a18c8c;" *ngIf="datapsi==null">Aun no se le asigna un especialista. Pronto se le notificara</h4>
      
         <div *ngIf="datapsi" >
 
           <h2>Psicologo Asignado</h2>
-          <img src="assets/icon/avataruser.png"  class="logopsi">
+          <img id='psilogo'  class="logopsi">
+
+
 
 
           <ion-list lines="none" >
             <ion-item>
               <ion-icon name="person-circle-outline" slot="start"></ion-icon>
-              <ion-label position="stacked">Nombre </ion-label>
-              <ion-input required type="text" [(ngModel)]="datapsi.nombre" disabled ></ion-input>
+              <ion-label position="stacked">Nombre Completo</ion-label>
+              <ion-input required type="text" [(ngModel)]="datapsi.nombre + ' ' + datapsi.apellido " disabled ></ion-input>
             </ion-item>
-            <ion-item>
-              <ion-icon name="person-circle-outline" slot="start"></ion-icon>
-              <ion-label position="stacked">Apellidos </ion-label>
-              <ion-input required type="text"  [(ngModel)]="datapsi.apellido" disabled ></ion-input>
-            </ion-item>
+           
             <ion-item>
               <ion-icon name="mail" slot="start"></ion-icon>
           
@@ -62,15 +68,28 @@
       
     </div>
     
-    <div id="container" *ngIf="value=='valorar'">
-         
+    <div id="container"  class="container2"  *ngIf="value=='valorar'" >
+      <h2>Calificacion de consulta</h2>
+        <h4>¿Que tal le parecio la consulta con nuestro especialista ?</h4>
+        <img src="assets/icon/calificacion.png" alt="">
+        <div class="puntajeactual" *ngIf="puntajeactual>0">
+          <ion-label>{{puntajeactual}}</ion-label>
+          <ion-icon style="color: #ffc83d;width: 20px;height: 20px;"   name="star"></ion-icon>
+        </div>
+       
+        <div class="punt"  *ngIf="puntajeactual==0" >
+          <ion-icon style="color: #ffc83d;width: 20px;height: 20px;"   name="sad"></ion-icon>
+          <ion-icon style="color: goldenrod;width: 20px;height: 20px;" (click)="asignar(estrella.valor)" *ngFor="let estrella of puntuacion" name="{{estrella.icon}}"></ion-icon>
+          <ion-icon style="color: #ffc83d;width: 20px;height: 20px;"  name="happy"></ion-icon>
+         </div>
+          <ion-button style="--background: #ffc83d;margin-left: 32%;margin-top: 20px;" (click)="registrarvaloracion()" *ngIf="puntajeactual==0"  shape="round">
+            Calificar
+          </ion-button>
       
     </div>
     
 
-    <ion-fab slot="fixed"  (click)="logout()" horizontal="end" vertical="bottom">
-      <ion-fab-button><ion-icon name="power"></ion-icon></ion-fab-button>
-    </ion-fab>
+    
   </ion-content>
 
 

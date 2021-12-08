@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController, NavController } from '@ionic/angular';
+import { ImgService } from '../services/img.service';
 import { PacienteService } from '../services/paciente.service';
 import { TokenService } from '../services/token.service';
 
@@ -11,7 +12,7 @@ import { TokenService } from '../services/token.service';
 export class NavPage implements OnInit {
   nombrecompleto;
   tipo;
-  constructor(private service:PacienteService ,private menu: MenuController,private navCtrl: NavController,private token:TokenService) { }
+  constructor(private service:PacienteService ,private menu: MenuController,private navCtrl: NavController,private token:TokenService,public imagenserv:ImgService) { }
   ngOnInit(): void {
     this.service.getuser(this.token.usuario.idpersonal).subscribe(
       data=>{

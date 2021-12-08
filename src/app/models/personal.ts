@@ -1,10 +1,18 @@
 
 
 export class Personal{
-    universidad:string;
-    ciclo:number;
+  idpersonal:number;
+
+     universidad:string;
+     especialidad:string;
+     n_colegiatura:string;
      grado_academico:string;
-   grupo:number;
+     ciclo:number;
+     grupo:number;
+     codigo:string;
+     tipo:string;
+     campo:string;
+     distrito:string;
      edad:string;
-     idpersonal:number;
+     idpersona:number;
 }

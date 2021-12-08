@@ -1,25 +1,25 @@
 <ion-content [fullscreen]>
 
-  <ion-list lines="none">
+  <ion-list lines="none" *ngIf="tipo=='psicologo'">
    
     <ion-item>
       <ion-icon name="business" slot="start"></ion-icon>
       <ion-label position="stacked" >Universidad:</ion-label>
       
-      <ion-input placeholder=""  [(ngModel)]="universidad" [disabled]="!editstate" ></ion-input>
+      <ion-input placeholder=""  [(ngModel)]="personal.universidad" [disabled]="!editstate" ></ion-input>
     </ion-item>
     
     <ion-item>
       <ion-icon name="ribbon" slot="start"></ion-icon>
-      <ion-label position="stacked">Edad:</ion-label>
-      <ion-input placeholder=""  [(ngModel)]="edad" [disabled]="!editstate" ></ion-input>
+      <ion-label position="stacked">Especialidad:</ion-label>
+      <ion-input placeholder=""  [(ngModel)]="personal.especialidad" [disabled]="!editstate" ></ion-input>
     </ion-item>
     <ion-item>
       <ion-icon name="id-card" slot="start"></ion-icon>
       <ion-label position="stacked" >
         Grado Academico
       </ion-label>
-      <ion-select  [(ngModel)]="grado_academico" [disabled]="!editstate"   placeholder="Seleccione una opcion">
+      <ion-select  [(ngModel)]="personal.grado_academico" [disabled]="!editstate"   placeholder="Seleccione una opcion">
         <ion-select-option value="primaria">Primaria</ion-select-option>
         <ion-select-option value="secundaria">Secundaria</ion-select-option>
         <ion-select-option value="universidad">Universidad</ion-select-option>
@@ -27,18 +27,48 @@
     </ion-item>
     <ion-item>
       <ion-icon name="school" slot="start"></ion-icon>
+      <ion-label position="stacked">Numero Colegiatura:</ion-label>
+      <ion-input placeholder=""  [(ngModel)]="personal.n_colegiatura" [disabled]="!editstate" ></ion-input>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-list lines="none"  *ngIf="tipo=='estudiante'">
+    <ion-item>
+      <ion-icon name="school" slot="start"></ion-icon>
       <ion-label position="stacked">Ciclo:</ion-label>
-      <ion-input placeholder=""  [(ngModel)]="ciclo" [disabled]="!editstate" ></ion-input>
+      <ion-input placeholder=""  [(ngModel)]="personal.ciclo" [disabled]="!editstate" ></ion-input>
     </ion-item>
     <ion-item>
       <ion-icon name="information" slot="start"></ion-icon>
       <ion-label position="stacked">Grupo:</ion-label>
-      <ion-input placeholder=" "  [(ngModel)]="grupo" [disabled]="!editstate" ></ion-input>
+      <ion-input placeholder=" "  [(ngModel)]="personal.grupo" [disabled]="!editstate" ></ion-input>
     </ion-item>
-
     
-  
+    <ion-item>
+      <ion-icon name="ribbon" slot="start"></ion-icon>
+      <ion-label position="stacked">Codigo:</ion-label>
+      <ion-input placeholder=""  [(ngModel)]="personal.codigo" [disabled]="!editstate" ></ion-input>
+    </ion-item>
+    
   </ion-list>
+  <ion-list lines="none"  *ngIf="tipo=='pastor'">
+   
+    <ion-item>
+      <ion-icon name="business" slot="start"></ion-icon>
+      <ion-label position="stacked" >Campo:</ion-label>
+      
+      <ion-input placeholder=""  [(ngModel)]="personal.campo" [disabled]="!editstate" ></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-icon name="ribbon" slot="start"></ion-icon>
+      <ion-label position="stacked">Distrito:</ion-label>
+      <ion-input placeholder=""  [(ngModel)]="personal.distrito" [disabled]="!editstate" ></ion-input>
+    </ion-item>
+  </ion-list>
+
+
   <ion-button (click)="activar()" class="editbtn" *ngIf="!editstate"fill="clear" shape="round">
     Editar <ion-icon slot="start" name="pencil"></ion-icon>
   </ion-button>
