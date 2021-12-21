@@ -10,7 +10,7 @@ import OneSignal from 'onesignal-cordova-plugin';
 })
 export class TokenService {
 
-  urlEndpoint = "hhttps://proyectooa-backend.herokuapp.com/EX3/auth";
+  urlEndpoint = "https://proyectooa-backend.herokuapp.com/EX3/auth";
 
   constructor(private http: HttpClient) { }
   private _usuario: Usuario;

@@ -44,22 +44,27 @@ export class HomepacPage implements OnInit {
        
         this.datapsi = data;
         console.log(data)
-        if(data.foto === null){
-          this.loading.dismiss();
-          var doc = document.getElementById('psilogo');
-          doc.setAttribute('src','https://s3.amazonaws.com/files.patmos.upeu.edu.pe/img/upload/fotos/80/no_photo.jpg');
+        if(this.datapsi){
+          if(data.foto === null){
+            this.loading.dismiss();
+            var doc = document.getElementById('psilogo');
+            doc.setAttribute('src','https://s3.amazonaws.com/files.patmos.upeu.edu.pe/img/upload/fotos/80/no_photo.jpg');
+          }else{
+            this.loading.dismiss();
+            this.imgserv.mostrarimagenfirebase(data.foto).subscribe(
+              data2=>{
+               
+                var doc = document.getElementById('psilogo');
+                doc.setAttribute('src',data2);
+              }
+            )
+  
+  
+          }
         }else{
           this.loading.dismiss();
-          this.imgserv.mostrarimagenfirebase(data.foto).subscribe(
-            data2=>{
-             
-              var doc = document.getElementById('psilogo');
-              doc.setAttribute('src',data2);
-            }
-          )
-
-
         }
+        
         
       }
     )
